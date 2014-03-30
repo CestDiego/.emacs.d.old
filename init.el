@@ -48,3 +48,9 @@
   (error
    (package-refresh-contents)
    (init--install-packages)))
+
+;; Lets start with a smattering of sanity
+(require 'sane-defaults)
+
+;; Setup Key bindings
+(require 'key-bindings)

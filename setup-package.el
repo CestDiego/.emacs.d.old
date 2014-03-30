@@ -1,5 +1,5 @@
 (require 'package)
-(require 'dash)
+;(require 'dash)
 
 ;; Add melpa to package repos
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -10,12 +10,12 @@
   (package-refresh-contents))
 
 (defun packages-install (packages)
-  (--each packages
-    (when (not (package-installed-p it))
-      (package-install it)))
+   (dolist (some-package packages)
+    (when (not (package-installed-p some-package))
+      (package-install some-package)))
   (delete-other-windows))
 
-;;; On-demand installation of packages
+;; On-demand installation of packages
 
 (defun require-package (package &optional min-version no-refresh)
   "Install given PACKAGE, optionally requiring MIN-VERSION.
